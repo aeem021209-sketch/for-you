@@ -264,7 +264,6 @@
   const colors = ['#378ADD','#85B7EB','#B5D4F4','#185FA5','#ddeeff','#0C447C'];
   let noCount = 0;
   const noBtn = document.getElementById('no-btn');
-  const messages = ['ไม่เป็น 🥺','คิดใหม่ได้นะคะ... 👉👈','แน่ใจแล้วหรอคะ? 😢','โอเคค่ะ... 💙'];
  
   /* Place button initially below the yes-button area */
   function initBtn() {
@@ -334,24 +333,6 @@
     }
   }
  
-  function handleYes() {
-    spawnConfetti();
-    setTimeout(() => {
-      noBtn.style.display = 'none';
-      document.getElementById('question-section').style.display = 'none';
-      document.getElementById('yes-result').style.display = 'block';
-    }, 450);
-  }
- 
-  function resetAll() {
-    noCount = 0;
-    noBtn.textContent = 'ไม่เป็น';
-    noBtn.style.display = 'block';
-    document.getElementById('question-section').style.display = 'block';
-    document.getElementById('yes-result').style.display  = 'none';
-    document.getElementById('no-result').style.display   = 'none';
-    setTimeout(initBtn, 60);
-  }
 </script>
 </body>
 </html>
