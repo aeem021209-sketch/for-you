@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500&family=Mitr:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
- 
+
     body {
       min-height: 100vh;
       display: flex;
@@ -23,7 +23,7 @@
       padding: 1rem;
       overflow: hidden;
     }
- 
+
     /* Soft floating blobs */
     body::before, body::after {
       content: '';
@@ -44,10 +44,10 @@
       bottom: -80px; right: -80px;
       animation: driftB 14s ease-in-out infinite alternate;
     }
- 
+
     @keyframes driftA { from { transform: translate(0,0); } to { transform: translate(40px, 30px); } }
     @keyframes driftB { from { transform: translate(0,0); } to { transform: translate(-30px, -40px); } }
- 
+
     .card {
       position: relative;
       z-index: 1;
@@ -63,34 +63,34 @@
       box-shadow: 0 8px 40px rgba(40, 90, 160, 0.1), 0 1px 0 rgba(255,255,255,0.8) inset;
       animation: riseUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
     }
- 
+
     @keyframes riseUp {
       from { opacity: 0; transform: translateY(30px) scale(0.97); }
       to   { opacity: 1; transform: translateY(0) scale(1); }
     }
- 
+
     @keyframes floatHeart {
       0%, 100% { transform: translateY(0) scale(1); }
       45%       { transform: translateY(-10px) scale(1.05); }
     }
- 
+
     @keyframes pulse {
       0%, 100% { transform: scale(1); }
       30%       { transform: scale(1.18); }
       60%       { transform: scale(1.05); }
     }
- 
+
     @keyframes fadeSlide {
       from { opacity: 0; transform: translateY(14px); }
       to   { opacity: 1; transform: translateY(0); }
     }
- 
+
     @keyframes confettiFall {
       0%   { transform: translateY(0) rotate(0deg) scale(1);   opacity: 1; }
       80%  { opacity: 1; }
       100% { transform: translateY(380px) rotate(800deg) scale(0.5); opacity: 0; }
     }
- 
+
     .heart-icon {
       font-size: 60px;
       display: block;
@@ -99,7 +99,7 @@
       filter: drop-shadow(0 0 16px rgba(56,138,220,0.4));
       line-height: 1;
     }
- 
+
     .pill {
       display: inline-block;
       background: rgba(56,138,220,0.1);
@@ -112,7 +112,7 @@
       margin-bottom: 1.2rem;
       letter-spacing: 0.04em;
     }
- 
+
     .main-title {
       font-family: 'Mitr', sans-serif;
       font-size: 24px;
@@ -121,20 +121,20 @@
       margin-bottom: 0.6rem;
       line-height: 1.3;
     }
- 
+
     .sub-text {
       font-size: 14.5px;
       color: #3782cc;
       line-height: 1.9;
       margin-bottom: 1.8rem;
     }
- 
+
     .sub-text .small {
       font-size: 12.5px;
       color: #185fa5;
       opacity: 0.85;
     }
- 
+
     .big-q {
       font-family: 'Mitr', sans-serif;
       font-size: 20px;
@@ -142,7 +142,7 @@
       margin-top: 0.4rem;
       display: block;
     }
- 
+
     .btn-yes {
       display: block;
       width: 100%;
@@ -162,7 +162,7 @@
     }
     .btn-yes:hover  { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(24,95,165,0.38); }
     .btn-yes:active { transform: scale(0.97); }
- 
+
     /* The runaway button — fixed position so it can escape anywhere */
     .btn-no {
       position: fixed;
@@ -181,13 +181,13 @@
       transition: background 0.1s;
       box-shadow: 0 2px 12px rgba(24,95,165,0.1);
     }
- 
+
     .hint {
       font-size: 12px;
       color: #96bde8;
       margin-top: 1rem;
     }
- 
+
     /* Results */
     .result {
       display: none;
@@ -206,7 +206,7 @@
       cursor: pointer; text-decoration: underline;
       font-family: 'Sarabun', sans-serif;
     }
- 
+
     /* Confetti */
     .confetti-piece {
       position: fixed;
@@ -218,12 +218,12 @@
   </style>
 </head>
 <body>
- 
+
 <div class="card">
   <!-- Question -->
   <div id="question-section">
     <span class="heart-icon">💙</span>
-    <span class="pill">มีเรื่องอยากบอก</span>
+    <span class="pill">🌊 มีเรื่องอยากบอก</span>
     <h1 class="main-title">Hi พี่กระต่าย</h1>
     <p class="sub-text">
       พี่ก็รู้แหละว่าเราคิดมากกว่านี้<br>
@@ -234,41 +234,43 @@
     </p>
     <button class="btn-yes" onclick="handleYes()">💙 เป็น</button>
     <div style="height:56px;"></div>
-    <p class="hint">คิดดี ๆ ก่อนตอบนะคะ </p>
+    <p class="hint">คิดดี ๆ ก่อนตอบนะคะ 🌊</p>
   </div>
- 
+
   <!-- Yes result -->
   <div class="result" id="yes-result">
     <span class="result-emoji">🥹💙</span>
     <h2 class="result-title">จริงนะ!</h2>
     <p class="result-sub">
-      เย่ จีบพี่ติดแล้วสินะ น่ารักที่สุดเลยย <br>
+      เย่ จีบพี่ติดแล้วสินะ น่ารักที่สุดเลยย 💙<br>
       ดีใจจริงนะเนี่ยยย ถ้างั้นน<br>
       เราจะไม่ดื้อกับพี่นะคะ จะดูแลอย่างดีเลยยย<br>
-      อยู่ให้เรารักไปนานๆนะ
+      อยู่ให้เรารักไปนานๆนะ 🌊
     </p>
     <button class="reset-btn" onclick="resetAll()">← กลับไปหน้าแรก</button>
   </div>
- 
-<div class="result" id="no-result">
-    <h2 class="result-title">เชอะ!</h2>
+
+  <!-- No result -->
+  <div class="result" id="no-result">
+    <span class="result-emoji">🌊😢</span>
+    <h2 class="result-title">โอเคค่ะ...</h2>
     <p class="result-sub">
-      ไม่ให้ปฎิเสธหรอก ไม่ยอมหรอก<br> 
-      ถ้าจะปฎิเสธอยู่นะ จะจีบจนกว่าจะติดอ่ะ<br>  
+      ขอบคุณที่ตอบตรง ๆ นะคะ<br>
+      ถ้าวันไหนพี่เปลี่ยนใจ หนูยังอยู่นะคะ 💙
     </p>
     <button class="reset-btn" onclick="resetAll()">← กลับไปหน้าแรก</button>
   </div>
 </div>
- 
+
 <!-- Runaway "No" button -->
 <button class="btn-no" id="no-btn" onclick="handleNoClick()">ไม่เป็น</button>
- 
+
 <script>
   const colors = ['#378ADD','#85B7EB','#B5D4F4','#185FA5','#ddeeff','#0C447C'];
   let noCount = 0;
   const noBtn = document.getElementById('no-btn');
-  const messages = ['ไม่เป็น','คิดอีกทีสิ','เฮ้ย! ยังจะกดอีก','ก็ได้ๆ เซ้าซี้จัง'];
- 
+  const messages = ['ไม่เป็น 🥺','คิดใหม่ได้นะคะ... 👉👈','แน่ใจแล้วหรอคะ? 😢','โอเคค่ะ... 💙'];
+
   /* Place button initially below the yes-button area */
   function initBtn() {
     const card = document.querySelector('.card');
@@ -276,7 +278,7 @@
     noBtn.style.left = (r.left + r.width/2 - noBtn.offsetWidth/2) + 'px';
     noBtn.style.top  = (r.top + r.height - 80) + 'px';
   }
- 
+
   /* Move button to a random spot away from the card */
   function flee() {
     const bw = noBtn.offsetWidth  || 120;
@@ -286,7 +288,7 @@
     const card = document.querySelector('.card');
     const r = card.getBoundingClientRect();
     const margin = 24;
- 
+
     let x, y, attempts = 0;
     do {
       x = margin + Math.random() * (vw - bw - margin * 2);
@@ -297,20 +299,20 @@
       x < r.right + 30 && x + bw > r.left - 30 &&
       y < r.bottom + 30 && y + bh > r.top - 30
     );
- 
+
     noBtn.style.left = x + 'px';
     noBtn.style.top  = y + 'px';
   }
- 
+
   window.addEventListener('load', () => setTimeout(initBtn, 120));
- 
+
   /* Flee on hover (desktop) */
   noBtn.addEventListener('mouseenter', flee);
- 
+
   /* Flee on touch move (mobile) */
   noBtn.addEventListener('touchmove', e => { e.preventDefault(); flee(); }, { passive: false });
   noBtn.addEventListener('touchstart', e => { e.preventDefault(); flee(); handleNoClick(); }, { passive: false });
- 
+
   function handleNoClick() {
     noCount++;
     if (noCount < 4) {
@@ -321,7 +323,7 @@
       document.getElementById('no-result').style.display = 'block';
     }
   }
- 
+
   function spawnConfetti() {
     for (let i = 0; i < 32; i++) {
       const el = document.createElement('div');
@@ -336,7 +338,7 @@
       setTimeout(() => el.remove(), 2800);
     }
   }
- 
+
   function handleYes() {
     spawnConfetti();
     setTimeout(() => {
@@ -345,7 +347,7 @@
       document.getElementById('yes-result').style.display = 'block';
     }, 450);
   }
- 
+
   function resetAll() {
     noCount = 0;
     noBtn.textContent = 'ไม่เป็น';
