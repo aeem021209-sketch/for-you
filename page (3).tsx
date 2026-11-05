@@ -7,16 +7,26 @@ import { supabase } from "@/lib/supabase";
 import type { Profile, Receipt, Student } from "@/lib/types";
 
 export default function ReceiptsPage() {
-  const router=useRouter();
-  const [profile,setProfile]=useState<Profile|null>(null);
-  const [rows,setRows]=useState<Receipt[]>([]);
-  const [students,setStudents]=useState<Student[]>([]);
-  const [search,setSearch]=useState("");
-  const [prefix,setPrefix]=useState("RC");
-  const [symbol,setSymbol]=useState("-");
-  const [serial,setSerial]=useState(1);
-  const [editing,setEditing]=useState<Receipt|null>(null);\n  const [showForm,setShowForm]=useState(false);
-  const [form,setForm]=useState({student_id:"",payer_name:"",description:"",amount:"",receipt_type:"normal" as "normal"|"independent",receipt_date:new Date().toISOString().slice(0,10)});
+  const router = useRouter();
+
+const [profile, setProfile] = useState<Profile | null>(null);
+const [rows, setRows] = useState<Receipt[]>([]);
+const [students, setStudents] = useState<Student[]>([]);
+const [search, setSearch] = useState("");
+const [prefix, setPrefix] = useState("RC");
+const [symbol, setSymbol] = useState("-");
+const [serial, setSerial] = useState(1);
+const [editing, setEditing] = useState<Receipt | null>(null);
+const [showForm, setShowForm] = useState(false);
+
+const [form, setForm] = useState({
+  student_id: "",
+  payer_name: "",
+  description: "",
+  amount: "",
+  receipt_type: "normal" as "normal" | "independent",
+  receipt_date: new Date().toISOString().slice(0, 10),
+});
 
   async function load(){
     const {data:{user}}=await supabase.auth.getUser(); if(!user){router.replace("/");return;}
