@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/34409842/README.md)
 # ระบบจัดการใบเสร็จโรงเรียน (Starter สำหรับทดสอบ)
 
 ระบบตัวอย่าง Next.js + Supabase สำหรับ deploy บน Vercel
